@@ -1,3 +1,8 @@
+var dict = {};
+var inputPassword = document.getElementbyId("password1").value;
+var inputUsername = document.getElementById("signupUsername").value;
+dict[inputUsername] = inputPassword;
+
 function setFormMessage(formElement, type, message) {
     const messageElement = formElement.querySelector(".form__message");
 
@@ -36,7 +41,16 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
 
         // Perform your AJAX/Fetch login
-
+        for(var key in dict) {
+            if(e.target.id === "loginUsername" && e.target.value == key) {
+                if(e.target.id === "loginPassword" && e.target.value == dict[key]) {
+                    window.location.replace("profile.html");
+                }
+                else {
+                    setFormMessage(loginForm, "error", "Invalid username/password combination");
+                }
+            }
+        }
         setFormMessage(loginForm, "error", "Invalid username/password combination");
     });
 
