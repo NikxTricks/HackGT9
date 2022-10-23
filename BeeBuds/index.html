@@ -5,13 +5,17 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+
+
 	<head>
 		<title>Phantom by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
 	</head>
+	<script type="text/javascript" src="assets/js/PercentageAlgorithm.js"></script>
 	<body class="is-preload">
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -60,8 +64,24 @@
 									<span class="image">
 										<img src="images/pic01.jpg" alt="" />
 									</span>
-									<a href="generic.html">
-										<h2>Magna</h2>
+									<a href="generic.html">Percent Match: 
+										<h2 id="match">
+											<script>
+											document.getElementById("match").innerHTML = 0;	
+											
+											const interval = setInterval(function() {
+											//document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+											//console.log({ localstorage: localStorage.getItem("percentMatchReal")})
+											document.getElementById("match").innerHTML = localStorage.getItem("percentMatchReal");
+											//document.write(localStorage.getItem("percentMatchReal"));
+											
+                                            }, 200);
+											  
+											
+											  </script>
+
+
+										</h2>
 										<div class="content">
 											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
 										</div>
