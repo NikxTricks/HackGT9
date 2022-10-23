@@ -1,8 +1,3 @@
-var dict = {};
-var inputPassword = document.getElementbyId("password1").value;
-var inputUsername = document.getElementById("signupUsername").value;
-dict[inputUsername] = inputPassword;
-
 function setFormMessage(formElement, type, message) {
     const messageElement = formElement.querySelector(".form__message");
 
@@ -39,24 +34,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loginForm.addEventListener("submit", e => {
         e.preventDefault();
-
-        // Perform your AJAX/Fetch login
-        for(var key in dict) {
-            if(e.target.id === "loginUsername" && e.target.value == key) {
-                if(e.target.id === "loginPassword" && e.target.value == dict[key]) {
-                    window.location.replace("profile.html");
-                }
-                else {
-                    setFormMessage(loginForm, "error", "Invalid username/password combination");
-                }
-            }
-        }
-        setFormMessage(loginForm, "error", "Invalid username/password combination");
+        window.location.replace("profile.html");
     });
 
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
             if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 10) {
+                setInputError(inputElement, "Username must be at least 10 characters in length");
+            }
+            if (e.target.id === "password1" && e.target.value.length > 0 && e.target.value.length < 10) {
                 setInputError(inputElement, "Username must be at least 10 characters in length");
             }
         });
