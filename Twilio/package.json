@@ -1,0 +1,19 @@
+{
+  "name": "hackgt9-main-2",
+  "version": "1.0.0",
+  "description": "BeeBuds is an all-new social platform for Georgia Tech students that will enable them to discover fellow yellowjackets who share common interests, schedules, campus preferences, academic goals, and career aspirations! By calculating compatibility scores between users, BeeBuds offers students a robust list of peers who they'll find it easy to bond with! Whether you're a social animal or a bit more reserved, BeeBuds paves the way for the formation of ironclad friendships and unforgettable memories, so get ready to Buzz Away!",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "requirejs": "^2.3.6",
+    "twilio": "^3.83.0"
+  }
+}
